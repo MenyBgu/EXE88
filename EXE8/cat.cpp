@@ -74,24 +74,24 @@ istream&operator>>(istream&in, Cat&c){
 
 	cout << "enter name: ";
 	in >> c.name;
-	while (cin.fail()){
+	while (in.fail()){
 		cout << "error occure,try again: ";
-		cin.ignore(INT_MAX, '\n');
+		in.ignore(INT_MAX, '\n');
 		in >> c.name;
 	}
 	cout << endl << "enter mustach length: ";
 	in >> c.mLength;
-	while (cin.fail()){
+	while (in.fail()){
 		cout << "error occure,try again: ";
-		cin.clear();
-		cin.ignore(INT_MAX, '\n');
+		in.clear();
+		in.ignore(INT_MAX, '\n');
 		in >> c.mLength;
 	}
 	cout << endl << "enter color: ";
 	in >> c.color;
-	while (cin.fail()){
+	while (in.fail()){
 		cout << "error occure,try again: ";
-		cin.ignore(INT_MAX, '\n');
+		in.ignore(INT_MAX, '\n');
 		in >> c.color;
 	}
 	c.id = ++counter;
@@ -104,34 +104,34 @@ ostream& operator<< (ostream&os, const SiamiCat&cv){	//Siami print out.
 	return os;
 }
 
-istream&operator>>(istream&in, SiamiCat&c){				//Siami cin.
-	Cat*temp = &c;										//receive detailes from cat.
+istream &operator>>(istream&in, SiamiCat&c){					//Siami cin.
+	Cat*temp = &c;												//receive detailes from cat.
 	in >> *temp;
 	cout << endl << "please enter favorite food(A/B): ";		//options are A or B.
 	in >> c.FavFood;
-	while (cin.fail()||(c.FavFood!='A'&&c.FavFood!='B')){
+	while (in.fail()||(c.FavFood!='A'&&c.FavFood!='B')){
 		cout << "error occure,try again(A/B): ";
-		cin.ignore(INT_MAX, '\n');
+		in.ignore(INT_MAX, '\n');
 		in >> c.FavFood;
 	}
 	return in;
 }
 
-ostream& operator<< (ostream&os, const StreetCat&c){	//StreetCat cout
-	os << static_cast<Cat>(c);							//receive detailes from cat.
+ostream& operator<< (ostream&os, const StreetCat&c){			//StreetCat cout
+	os << static_cast<Cat>(c);									//receive detailes from cat.
 	os << "cat fights: " << c.battles << endl;
 	return os;
 }
 
-istream&operator>>(istream&in, StreetCat&c){			//StreetCat cin
-	Cat*temp = &c;										//receive detailes from cat.
+istream&operator>>(istream&in, StreetCat&c){					//StreetCat cin
+	Cat*temp = &c;												//receive detailes from cat.
 	in >> *temp;
 	cout << endl << "enter cat number of fights: ";
 	in >> c.battles;
-	while (cin.fail()){
+	while (in.fail()){
 		cout << "error occure,try again: ";
-		cin.clear();
-		cin.ignore(INT_MAX, '\n');
+		in.clear();
+		in.ignore(INT_MAX, '\n');
 		in >> c.battles;
 	}
 	return in;

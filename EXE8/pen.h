@@ -12,6 +12,8 @@ class CatsPen{
 	SiamiCat*siami;
 	int catsNum;
 	int freeCaves;		//total can be 5.
+	int streetC;
+	int siamiC;
 public:
 	CatsPen();
 	~CatsPen();

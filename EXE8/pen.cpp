@@ -5,10 +5,7 @@
 #include "pen.h"
 using namespace std;
 
-static int streetC=0;
-static int siamiC=0;
-
-CatsPen::CatsPen() :catsNum(0), freeCaves(5){		//default values.
+CatsPen::CatsPen() :catsNum(0), freeCaves(5),streetC(0),siamiC(0){		//default values.
 		street = new StreetCat[5];					//max size of 5.
 		assert(street != NULL&&"Heap error.");
 		siami = new SiamiCat[5];
@@ -32,30 +29,30 @@ bool CatsPen::place(){
 
 ostream&operator<<(ostream &os, const CatsPen&c){
 	int counter = 0;
-	if (streetC == 0&&siamiC){
+	if (c.streetC == 0 && c.siamiC==0){
 		os << "Lists are empty." << endl;
 	}
-	else if (streetC == 0){
+	else if (c.streetC == 0){
 		os << "street cat list empty." << endl;
-		while (siamiC > counter){
+		while (c.siamiC > counter){
 			os << c.siami[counter] << endl;
 			counter++;
 		}
 	}
-	else if (siamiC == 0){
+	else if (c.siamiC == 0){
 		os << "siami cat list empty." << endl;
-		while (streetC > counter){
+		while (c.streetC > counter){
 			os << c.street[counter] << endl;
 			counter++;
 		}
 	}
 	else{
 		int counter2 = 0;
-		while (streetC > counter){
+		while (c.streetC > counter){
 			os << c.street[counter] << endl;
 			counter++;
 		}
-		while (siamiC > counter2){
+		while (c.siamiC > counter2){
 			os << c.siami[counter2] << endl;
 			counter2++;
 		}
