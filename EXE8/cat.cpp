@@ -67,17 +67,18 @@ ostream& operator<< (ostream&os, const Cat&c){
 	return os;
 }
 istream&operator>>(istream&in, Cat&c){
-	c.name = new char[100];
+	c.name = new char[500];
 	assert(c.name != 0 && "heap error.");
-	c.color = new char[100];
+	c.color = new char[500];
 	assert(c.color != 0 && "heap error.");
 
 	cout << "enter name: ";
-	in >> c.name;
-	while (in.fail()){
+	in.clear();
+	in.ignore();
+	in.getline(c.name,500);
+	while (in.fail()||strlen(c.name)<=0){
 		cout << "error occure,try again: ";
-		in.ignore(INT_MAX, '\n');
-		in >> c.name;
+		in.getline(c.name, 500);
 	}
 	cout << endl << "enter mustach length: ";
 	in >> c.mLength;
@@ -88,11 +89,12 @@ istream&operator>>(istream&in, Cat&c){
 		in >> c.mLength;
 	}
 	cout << endl << "enter color: ";
-	in >> c.color;
-	while (in.fail()){
+	in.clear();
+	in.ignore();
+	in.getline(c.color,500);
+	while (in.fail() || strlen(c.color)<=0){
 		cout << "error occure,try again: ";
-		in.ignore(INT_MAX, '\n');
-		in >> c.color;
+		in.getline(c.color,500);
 	}
 	c.id = ++counter;
 	return in;
@@ -128,7 +130,7 @@ istream&operator>>(istream&in, StreetCat&c){					//StreetCat cin
 	in >> *temp;
 	cout << endl << "enter cat number of fights: ";
 	in >> c.battles;
-	while (in.fail()){
+	while (in.fail()||c.battles<0){
 		cout << "error occure,try again: ";
 		in.clear();
 		in.ignore(INT_MAX, '\n');
