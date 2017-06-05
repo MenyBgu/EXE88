@@ -1,0 +1,15 @@
+﻿Build started 05/06/2017 20:13:20.
+     1>Project "E:\VS2013\EXE8\EXE8\EXE8.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         E:\Program Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\VS2013\EXE8\Debug\EXE8.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\VS2013\EXE8\Debug\EXE8.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\VS2013\EXE8\Debug\EXE8.lib" /MACHINE:X86 Debug\cat.obj
+         Debug\main.obj
+         Debug\pen.obj
+         EXE8.vcxproj -> E:\VS2013\EXE8\Debug\EXE8.exe
+     1>Done Building Project "E:\VS2013\EXE8\EXE8\EXE8.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.60
