@@ -22,7 +22,6 @@ CatsPen::~CatsPen(){
 
 bool CatsPen::place(){
 	if (freeCaves){			//while its different from 0 true.
-		cout << "there is still " << freeCaves << " places free." << endl;
 		return true;
 	}
 	else{					//else mean 0 and that's means no free caves.
@@ -75,7 +74,6 @@ bool CatsPen::addStreet(){
 		freeCaves--;
 		catsNum++;
 	}
-	place();
 	return false;
 }
 
@@ -89,6 +87,5 @@ bool CatsPen::addSiami(){
 		freeCaves--;
 		catsNum++;
 	}
-	place();
 	return false;
 }

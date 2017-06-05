@@ -5,8 +5,8 @@
 using namespace std;
 
 Cat::Cat(){
-	name = "";
-	color = "";
+	name = new char[0];
+	color = new char[0];
 	id = 0;
 	mLength = 0;
 }

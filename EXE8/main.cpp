@@ -7,7 +7,7 @@ using namespace std;
 int main(){
 	{
 		std::cout << "========================================================" << std::endl;		//our names.
-		std::cout << "Meny Buganim  302490610 ---- Baruch Rothkoff  311603252" << std::endl;
+		std::cout << " Meny Buganim  302490610 ---- Baruch Rothkoff  311603252" << std::endl;
 		std::cout << "========================================================" << std::endl << std::endl;
 
 		int menu = 0;
